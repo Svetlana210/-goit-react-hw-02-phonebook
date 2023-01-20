@@ -43,15 +43,10 @@ export class App extends Component {
     return contacts.find(contact => contact.name.toLowerCase() === name);
   };
 
-  deleteContact = e => {
-    const { id } = e.currentTarget.parentNode;
+  deleteContact = id => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
-    // const filteredContacts = contacts.filter(contact => {
-    //   return contact.id !== id;
-    // });
-    // return this.setState({ contacts: [...filteredContacts] });
   };
 
   render() {
