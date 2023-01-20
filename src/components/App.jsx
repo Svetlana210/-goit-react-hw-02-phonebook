@@ -50,7 +50,7 @@ export class App extends Component {
   };
 
   render() {
-    const { contacts, filter } = this.state;
+    const { filter } = this.state;
     return (
       <div className={styles.container}>
         <h1>Phonebook</h1>
@@ -61,8 +61,7 @@ export class App extends Component {
         <h2>Contacts</h2>
         <Filter onChange={this.handleChange} filter={filter}></Filter>
         <ContactList
-          contacts={contacts}
-          filterContacts={this.filterContacts()}
+          contacts={this.filterContacts()}
           deleteContact={this.deleteContact}
         ></ContactList>
       </div>
