@@ -12,6 +12,7 @@ class Form extends Component {
       [name]: value,
     });
   };
+
   handleSubmit = e => {
     e.preventDefault();
     const { name } = this.state;

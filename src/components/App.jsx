@@ -24,10 +24,10 @@ export class App extends Component {
       contacts: [...prevState.contacts, { number, name, id }],
     }));
   };
-  handleChange = e => {
-    const { name, value } = e.currentTarget;
+  handleChangeFilter = e => {
+    const { value } = e.currentTarget;
     this.setState({
-      [name]: value,
+      filter: value,
     });
   };
   filterContacts = () => {
@@ -57,13 +57,13 @@ export class App extends Component {
         <Form
           onSubmit={this.formSubmitHandler}
           doubleContact={this.doubleContact}
-        ></Form>
+        />
         <h2>Contacts</h2>
-        <Filter onChange={this.handleChange} filter={filter}></Filter>
+        <Filter onChange={this.handleChangeFilter} filter={filter} />
         <ContactList
           contacts={this.filterContacts()}
           deleteContact={this.deleteContact}
-        ></ContactList>
+        />
       </div>
     );
   }
