@@ -16,9 +16,12 @@ export class App extends Component {
     filter: '',
   };
 
-  formSubmitHandler = ({ name, number }) => {
-    this.setState(({ contacts }) => ({
-      contacts: [...contacts, { number, name, id: nanoid() }],
+  formSubmitHandler = data => {
+    const id = nanoid();
+    const { name, number } = data;
+
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, { number, name, id }],
     }));
   };
   handleChange = e => {

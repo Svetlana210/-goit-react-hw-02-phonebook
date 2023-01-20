@@ -12,7 +12,11 @@
   margin-top: 15px;
   margin-left: 20px;
   padding: 5px;
-  background-color: transparent;
+  background-color: white;
   border-radius: 2px;
   border: 1px solid gray;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(190, 193, 193);
 }
